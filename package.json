@@ -27,7 +27,8 @@
   "scripts": {
     "format": "prettier --write . --ignore-unkown",
     "build": "pnpm --filter @scl/testing run build",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "test": "pnpm --filter playground run test"
   },
   "license": "MIT",
   "devDependencies": {
