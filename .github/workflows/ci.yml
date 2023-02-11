@@ -51,4 +51,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Test
-        run: pnpm test
+        run: pnpm --filter playground test
