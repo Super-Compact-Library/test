@@ -6,6 +6,9 @@
   "type": "module",
   "types": "./dist/index.d.ts",
   "exports": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "bin": {
     "scl-test": "./dist/bin/index.js"
   },
