@@ -1,7 +1,8 @@
 {
-  "name": "@scl/testing",
+  "name": "vttl",
   "version": "0.0.1",
   "description": "A very tiny testing library",
+  "private": false,
   "module": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -10,7 +11,7 @@
     "dist"
   ],
   "bin": {
-    "scl-test": "./dist/bin/index.js"
+    "vttl": "./dist/bin/index.js"
   },
   "scripts": {
     "build": "tsup --config ./tsup.config.ts",

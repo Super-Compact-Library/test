@@ -1,4 +1,4 @@
-import { it, expect, beforeEach, afterEach } from '@scl/testing'
+import { it, expect, beforeEach, afterEach } from 'vttl'
 
 import { calc } from './calc.js'
 

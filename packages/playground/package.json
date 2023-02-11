@@ -7,11 +7,11 @@
   "keywords": [],
   "author": "",
   "scripts": {
-    "test": "scl-test",
+    "test": "vttl",
     "test:ci": "node ./run.mjs"
   },
   "devDependencies": {
-    "@scl/testing": "workspace:*"
+    "vttl": "workspace:*"
   },
   "license": "ISC"
 }

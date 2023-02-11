@@ -2,7 +2,7 @@
   "name": "ts-lib-starter",
   "version": "0.0.0",
   "author": "nemurubaka",
-  "private": true,
+  "private": false,
   "description": "",
   "keywords": [],
   "publishConfig": {

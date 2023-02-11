@@ -35,9 +35,9 @@ importers:
 
   packages/playground:
     specifiers:
-      '@scl/testing': workspace:*
+      vttl: workspace:*
     devDependencies:
-      '@scl/testing': link:../core
+      vttl: link:../core
 
 packages:
 
