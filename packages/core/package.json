@@ -1,7 +1,7 @@
 {
   "name": "@scl/testing",
   "version": "0.0.1",
-  "description": "",
+  "description": "A very tiny testing library",
   "module": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -13,9 +13,14 @@
     "build": "tsup --config ./tsup.config.ts",
     "build:soucemap": "tsup --config ./tsup.debug.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "testing",
+    "test",
+    "tiny",
+    "esm"
+  ],
+  "author": "nemurubaka",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.11.18",
     "tsup": "^6.5.0",
