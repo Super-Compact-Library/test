@@ -7,7 +7,8 @@
   "keywords": [],
   "author": "",
   "scripts": {
-    "test": "scl-test"
+    "test": "scl-test",
+    "test:ci": "node ./run.mjs"
   },
   "devDependencies": {
     "@scl/testing": "workspace:*"

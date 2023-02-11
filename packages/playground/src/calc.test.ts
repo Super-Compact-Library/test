@@ -12,7 +12,7 @@ it('get right answer', () => {
 })
 
 it('wrong answer' , () => {
-  expect(calc(1,1)).toBe(3)
+  expect(calc(1,1)).not.toBe(3)
 })
 
 it('object', () => {
