@@ -3,13 +3,14 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "print": "core-cli --name haha --age 40"
-  },
+  "type": "module",
   "keywords": [],
   "author": "",
+  "scripts": {
+    "test": "scl-test"
+  },
   "devDependencies": {
-    "core": "workspace:*"
+    "@scl/testing": "workspace:*"
   },
   "license": "ISC"
 }
