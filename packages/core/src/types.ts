@@ -9,7 +9,4 @@ interface IMatcher<Value = unknown> {
   toBe(expected: Value): void
 }
 
-export {
-  IReportee,
-  IMatcher
-}
+export { IReportee, IMatcher }

@@ -1,12 +1,12 @@
-import { join } from "path";
-import type { IReportee } from "./types";
+import { join } from 'path'
+import type { IReportee } from './types'
 
 const outputFolderPath = join(process.cwd(), './node_modules/.tinytestlib')
 
 class Reportee<V = unknown> implements IReportee<V> {
-  passed: boolean;
-  received: V;
-  expected: V;
+  passed: boolean
+  received: V
+  expected: V
 
   constructor(passed: boolean, received: V, expected: V) {
     this.passed = passed
@@ -15,7 +15,4 @@ class Reportee<V = unknown> implements IReportee<V> {
   }
 }
 
-export {
-  outputFolderPath,
-  Reportee
-}
+export { outputFolderPath, Reportee }

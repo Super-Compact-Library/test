@@ -10,8 +10,4 @@ const afterEach = (callback: () => void) => {
   hookCenter.on('after-each', callback)
 }
 
-export {
-  hookCenter,
-  beforeEach,
-  afterEach
-}
+export { hookCenter, beforeEach, afterEach }

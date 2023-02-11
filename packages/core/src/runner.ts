@@ -5,23 +5,20 @@ import { globby } from 'globby'
 import { transform } from './transform'
 import { outputFolderPath } from './shared'
 
-
 const getTestFiles = async () => {
   const paths = await globby(['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts}'], {
     ignore: [
-      '**/node_modules/**', 
-      '**/dist/**', 
-      '**/cypress/**', 
-      '**/.{idea,git,cache,output,temp}/**', 
-      '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*'
+      '**/node_modules/**',
+      '**/dist/**',
+      '**/cypress/**',
+      '**/.{idea,git,cache,output,temp}/**',
+      '**/{karma,rollup,webpack,vite,vitest,jest,ava,babel,nyc,cypress,tsup,build}.config.*',
     ],
-    absolute: true
+    absolute: true,
   })
 
   return paths
 }
-
-
 
 // first , a naive runner without involving paralleism
 
@@ -29,13 +26,16 @@ const runner = async (getTestFiles: () => Promise<string[]>) => {
   const testFiles = await getTestFiles()
   await transform(testFiles)
 
-  const filenames = await readdir(outputFolderPath, { withFileTypes: true, encoding: 'utf-8' })
+  const filenames = await readdir(outputFolderPath, {
+    withFileTypes: true,
+    encoding: 'utf-8',
+  })
 
   const exitCodeList: number[] = []
 
-  for(const testFile of filenames) {
+  for (const testFile of filenames) {
     const absolutePath = join(outputFolderPath, testFile.name)
-    
+
     const cmd = fork(absolutePath)
 
     cmd.on('exit', code => {
@@ -43,9 +43,9 @@ const runner = async (getTestFiles: () => Promise<string[]>) => {
 
       const len = filenames.length
 
-      if(exitCodeList.length === len) {
+      if (exitCodeList.length === len) {
         exitCodeList.forEach(c => {
-          if(c !== 0) {
+          if (c !== 0) {
             process.exit(c)
           }
         })
@@ -57,12 +57,6 @@ const runner = async (getTestFiles: () => Promise<string[]>) => {
       throw err
     })
   }
-
 }
 
-
-
-export {
-  runner,
-  getTestFiles
-}
+export { runner, getTestFiles }
