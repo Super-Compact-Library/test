@@ -35,9 +35,9 @@ importers:
 
   packages/playground:
     specifiers:
-      vttl: workspace:*
+      '@konpakuto/test': workspace:*
     devDependencies:
-      vttl: link:../core
+      '@konpakuto/test': link:../core
 
 packages:
 

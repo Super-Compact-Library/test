@@ -1,4 +1,4 @@
-import { it, expect, beforeEach } from 'vttl'
+import { it, expect, beforeEach } from '@konpakuto/test'
 
 import { calc } from './calc.js'
 

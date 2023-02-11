@@ -1,5 +1,5 @@
 {
-  "name": "vttl",
+  "name": "@konpakuto/test",
   "version": "0.0.1",
   "description": "A very tiny testing library",
   "private": false,
@@ -10,8 +10,11 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
-    "vttl": "./dist/bin/index.js"
+    "ktest": "./dist/bin/index.js"
   },
   "scripts": {
     "build": "tsup --config ./tsup.config.ts",

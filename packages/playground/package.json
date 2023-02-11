@@ -7,11 +7,11 @@
   "keywords": [],
   "author": "",
   "scripts": {
-    "test": "vttl",
+    "test": "ktest",
     "test:ci": "node ./run.mjs"
   },
   "devDependencies": {
-    "vttl": "workspace:*"
+    "@konpakuto/test": "workspace:*"
   },
   "license": "ISC"
 }
