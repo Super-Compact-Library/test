@@ -4,6 +4,7 @@ import { calc } from './calc.js'
 
 beforeEach(() => {
   console.log('second file')
+  console.log('current NODE_ENV is ', process.env.NODE_ENV)
 })
 
 afterEach(() => {

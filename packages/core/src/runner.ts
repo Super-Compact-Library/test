@@ -1,6 +1,7 @@
 import { fork } from 'child_process'
 import { join } from 'path'
 import { readdir } from 'fs/promises'
+import { env } from 'process'
 import { globby } from 'globby'
 import { transform } from './transform'
 import { outputFolderPath } from './shared'
@@ -24,6 +25,8 @@ const getTestFiles = async () => {
 // first , a naive runner without involving paralleism
 
 const runner = async (getTestFiles: () => Promise<string[]>) => {
+  env.NODE_ENV = 'test'
+
   const testFiles = await getTestFiles()
   await transform(testFiles)
 
@@ -37,7 +40,9 @@ const runner = async (getTestFiles: () => Promise<string[]>) => {
   for (const testFile of filenames) {
     const absolutePath = join(outputFolderPath, testFile.name)
 
-    const cmd = fork(absolutePath)
+    const cmd = fork(absolutePath, {
+      env: env
+    })
 
     cmd.on('exit', code => {
       exitCodeList.push(code ?? 0)
