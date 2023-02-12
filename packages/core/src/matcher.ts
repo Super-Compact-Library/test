@@ -7,8 +7,8 @@ const withNot = (hasNot: boolean, value: boolean) => {
 }
 
 class Matcher<Value = unknown> implements IMatcher<Value> {
-  received: Value
-  hasNot: boolean
+  private received: Value
+  private hasNot: boolean
 
   constructor(received: Value) {
     this.received = received

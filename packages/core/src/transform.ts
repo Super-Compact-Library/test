@@ -1,4 +1,4 @@
-import * as esbuild from 'esbuild'
+import esbuild from 'esbuild'
 import { name as thisModuleName } from '../package.json'
 import { outputFolderPath } from './shared'
 
