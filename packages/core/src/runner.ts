@@ -4,6 +4,7 @@ import { readdir } from 'fs/promises'
 import { globby } from 'globby'
 import { transform } from './transform'
 import { outputFolderPath } from './shared'
+import { cleanup } from './cleanup'
 
 const getTestFiles = async () => {
   const paths = await globby(['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts}'], {
@@ -50,7 +51,9 @@ const runner = async (getTestFiles: () => Promise<string[]>) => {
           }
         })
 
-        process.exit(0)
+        cleanup().then(() => {
+          process.exit(0)
+        })
       }
     })
     cmd.on('error', err => {
