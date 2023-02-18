@@ -1,9 +1,6 @@
-# ts-lib-starter
+# @konpakuto/test
 
-## Using this template
-
-- Search `ts-lib-starter` and replace it with your custom package name.
-- Search `nemurubaka` and replace it with your name.
+A very tiny testing library.
 
 ## License
 
